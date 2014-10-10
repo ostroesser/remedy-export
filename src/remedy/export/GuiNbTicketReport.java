@@ -1,7 +1,4 @@
-package gui.remedy.export.templates;
-
-import gui.remedy.export.GuiReport;
-import gui.remedy.export.MainPanel;
+package remedy.export;
 
 public class GuiNbTicketReport extends GuiReport {
 
@@ -13,5 +10,5 @@ public class GuiNbTicketReport extends GuiReport {
 	public GuiNbTicketReport(MainPanel gui) {
 		super(gui);
 	}
-	
+
 }

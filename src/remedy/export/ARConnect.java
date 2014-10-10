@@ -20,8 +20,6 @@ public class ARConnect extends SwingWorker<Boolean, Boolean> {
 		this.login = login;
 		this.pwd = pwd;
 	}
-	
-	
 
 	@Override
 	protected Boolean doInBackground() throws Exception {

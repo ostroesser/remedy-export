@@ -1,10 +1,6 @@
-package remedy.export.templates;
+package remedy.export;
 
 import java.sql.SQLException;
-
-import remedy.export.BackgrdSQL;
-import remedy.export.RExport;
-import remedy.export.Report;
 
 public class CheckChildTickets extends Report {
 
@@ -15,7 +11,8 @@ public class CheckChildTickets extends Report {
 
 	public String[] CheckChildUpdates(int agentIndex) {
 
-//		String query = "select Description from SMS_SRT_Service_Request where Ticket_id = 'B00000022640820'";
+		// String query =
+		// "select Description from SMS_SRT_Service_Request where Ticket_id = 'B00000022640820'";
 		String query = "select * from  SMS_SRT_Service_Request";
 		isQuerying = true;
 		reportException = null;
@@ -27,7 +24,7 @@ public class CheckChildTickets extends Report {
 					isQuerying = false;
 
 					try {
-						
+
 						while (rs.next()) {
 							owner.broadcast(rs.getString("Description"));
 						}
@@ -46,7 +43,6 @@ public class CheckChildTickets extends Report {
 				}
 			}
 		}.execute();
-
 
 		String[] ret = null;
 		return ret;

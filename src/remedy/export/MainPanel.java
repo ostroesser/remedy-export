@@ -1,9 +1,6 @@
-package gui.remedy.export;
-
-import gui.remedy.export.templates.GuiCheckChildTickets;
+package remedy.export;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -19,11 +16,14 @@ import javax.swing.JTabbedPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
-
+/**
+ * {@code MainPanel} is just the main content pane of the Remedy export app.
+ * 
+ * @author Olivier Stroesser
+ * 
+ */
 public class MainPanel extends JPanel {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -5443681405012291300L;
 
 	protected JLabel connStatus;
@@ -32,6 +32,12 @@ public class MainPanel extends JPanel {
 	protected Gui owner;
 	private JTabbedPane tabbedPane;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param owner
+	 *            Top-level graphic interface
+	 */
 	public MainPanel(Gui owner) {
 		// create gui reportlist
 		this.owner = owner;
@@ -51,8 +57,7 @@ public class MainPanel extends JPanel {
 
 		tabbedPane.addTab("Start Page", null, StartPage, null);
 
-		JLabel lblCheckChildTickets = new JLabel(
-				"Check Child tickets");
+		JLabel lblCheckChildTickets = new JLabel("Check Child tickets");
 		StartPage.add(lblCheckChildTickets, "cell 1 1");
 
 		JButton btnCheckChild = new JButton("Go!");
@@ -68,7 +73,7 @@ public class MainPanel extends JPanel {
 		splitPane.setRightComponent(bottomStatus);
 		bottomStatus.setLayout(new BorderLayout(0, 0));
 
-		console = new JEditorPane("text","Remedy reports");
+		console = new JEditorPane("text", "Remedy reports");
 		console.setEditable(false);
 		// bottomStatus.add(console, BorderLayout.CENTER);
 
@@ -92,6 +97,10 @@ public class MainPanel extends JPanel {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Create a report : Checking if some child tickets are waiting for
+	 * information or action.
+	 */
 	protected void createCheckChild() {
 		reports.add(new GuiCheckChildTickets(this));
 		tabbedPane.addTab("Check child ticket updates", null,

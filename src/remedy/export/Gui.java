@@ -1,10 +1,9 @@
-package gui.remedy.export;
+package remedy.export;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.security.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,8 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-
-import remedy.export.RExport;
 
 public class Gui extends JFrame {
 
@@ -53,25 +50,29 @@ public class Gui extends JFrame {
 		menuBar = new JMenuBar();
 		menuBar.add(file);
 		setJMenuBar(menuBar);
-		
+
 		try {
-			rExport = new RExport(this){
-				public void broadcast(String s){
+			rExport = new RExport(this) {
+				public void broadcast(String s) {
 					DateFormat df = new SimpleDateFormat("HH:mm:ss");
 					Date dateobj = new Date();
 					System.out.println(df.format(dateobj) + " - INFO : " + s);
 					JEditorPane console = contPane.getConsole();
-					console.setText(console.getText() + "\n" + df.format(dateobj) + " - INFO : " + s);
-					
+					console.setText(console.getText() + "\n"
+							+ df.format(dateobj) + " - INFO : " + s);
+
 				}
-				
-				public void broadcast(Exception e){
+
+				public void broadcast(Exception e) {
 					DateFormat df = new SimpleDateFormat("HH:mm:ss");
 					Date dateobj = new Date();
-					
-					System.out.println(df.format(dateobj) + " - ERROR : " + e.getMessage());
+
+					System.out.println(df.format(dateobj) + " - ERROR : "
+							+ e.getMessage());
 					JEditorPane console = contPane.getConsole();
-					console.setText(console.getText() + "\n" + df.format(dateobj) + " - ERROR : " + e.getMessage());
+					console.setText(console.getText() + "\n"
+							+ df.format(dateobj) + " - ERROR : "
+							+ e.getMessage());
 				}
 			};
 		} catch (IOException e) {

@@ -1,7 +1,11 @@
 package remedy.export;
 
-import java.sql.ResultSet;
-
+/**
+ * Generic top-level class for reports
+ * 
+ * @author livo
+ *
+ */
 public class Report {
 
 	protected RExport owner;
@@ -16,7 +20,6 @@ public class Report {
 		return isQuerying;
 	}
 
-	
 	public Report(RExport owner) {
 		this.owner = owner;
 		isQuerying = false;

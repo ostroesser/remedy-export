@@ -1,7 +1,5 @@
 package remedy.export;
 
-import gui.remedy.export.Gui;
-
 import javax.swing.JFrame;
 
 public class RunGui implements Runnable {
@@ -10,7 +8,6 @@ public class RunGui implements Runnable {
 
 	}
 
-	
 	@Override
 	public void run() {
 		// Create and set up the window.

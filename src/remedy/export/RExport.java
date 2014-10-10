@@ -1,7 +1,5 @@
 package remedy.export;
 
-import gui.remedy.export.Gui;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,11 +33,11 @@ public class RExport implements Connectable {
 					owner.setConn(conn);
 					owner.setIsConnected(true);
 					broadcast("Connection established");
-					//TODO display connection label
+					// TODO display connection label
 				} else {
 
 					broadcast("Connection Failed");
-					//TODO display connection label
+					// TODO display connection label
 					owner.broadcast(connectionError);
 				}
 			}
@@ -61,15 +59,14 @@ public class RExport implements Connectable {
 			}
 		}
 	}
-	
-	public void broadcast(String s){
+
+	public void broadcast(String s) {
 		DateFormat df = new SimpleDateFormat("HH:mm:ss");
 		Date dateobj = new Date();
 		System.out.println(df.format(dateobj) + " - INFO : " + s);
 	}
-	
-	
-	public void broadcast(Exception e){
+
+	public void broadcast(Exception e) {
 		DateFormat df = new SimpleDateFormat("HH:mm:ss");
 		Date dateobj = new Date();
 		System.out.println(df.format(dateobj) + " - ERROR : " + e.getMessage());

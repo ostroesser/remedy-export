@@ -1,7 +1,4 @@
-package gui.remedy.export.templates;
-
-import gui.remedy.export.GuiReport;
-import gui.remedy.export.MainPanel;
+package remedy.export;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -13,9 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import remedy.export.Report;
-import remedy.export.templates.CheckChildTickets;
 
 public class GuiCheckChildTickets extends GuiReport {
 	/**
@@ -32,12 +26,11 @@ public class GuiCheckChildTickets extends GuiReport {
 		add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		
 		JLabel lblNewLabel = new JLabel("New label");
 		panel.add(lblNewLabel);
-	
 
-		comboBoxAgentSelect = new JComboBox<Object>(owner.getOwner().getrExport().getAgents().toArray());
+		comboBoxAgentSelect = new JComboBox<Object>(owner.getOwner()
+				.getrExport().getAgents().toArray());
 		panel.add(comboBoxAgentSelect);
 
 		JButton btnCheckAgentChildTickets = new JButton("Go!");
@@ -51,11 +44,18 @@ public class GuiCheckChildTickets extends GuiReport {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Create a graphical report for the child tickets waiting for action.
+	 * 
+	 * @param agentIndex
+	 *            {@code int} index of the agent in the list
+	 */
 	public void checkAgentChild(int agentIndex) {
-		
+
 		ArrayList<Report> reports = owner.getOwner().getrExport().getReports();
 		reports.add(new CheckChildTickets(owner.getOwner().getrExport()));
-		CheckChildTickets checkChild = (CheckChildTickets) reports.get(reports.size()-1);
+		CheckChildTickets checkChild = (CheckChildTickets) reports.get(reports
+				.size() - 1);
 		String[] ticket_updates = checkChild.CheckChildUpdates(agentIndex);
 		return;
 	}
