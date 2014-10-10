@@ -27,6 +27,7 @@ public class CheckChildTickets extends Report {
 					isQuerying = false;
 
 					try {
+						
 						while (rs.next()) {
 							owner.broadcast(rs.getString("Description"));
 						}

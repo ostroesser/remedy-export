@@ -13,4 +13,5 @@ public class GuiNbTicketReport extends GuiReport {
 	public GuiNbTicketReport(MainPanel gui) {
 		super(gui);
 	}
+	
 }

@@ -32,6 +32,7 @@ public class GuiCheckChildTickets extends GuiReport {
 		add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
+		
 		JLabel lblNewLabel = new JLabel("New label");
 		panel.add(lblNewLabel);
 	

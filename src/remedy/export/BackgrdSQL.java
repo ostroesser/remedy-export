@@ -20,6 +20,7 @@ public class BackgrdSQL extends SwingWorker<Void, Boolean> {
 		query = Query;
 		owner = App;
 	}
+	
 
 	@Override
 	protected Void doInBackground() throws Exception {

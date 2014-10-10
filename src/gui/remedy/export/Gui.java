@@ -68,6 +68,7 @@ public class Gui extends JFrame {
 				public void broadcast(Exception e){
 					DateFormat df = new SimpleDateFormat("HH:mm:ss");
 					Date dateobj = new Date();
+					
 					System.out.println(df.format(dateobj) + " - ERROR : " + e.getMessage());
 					JEditorPane console = contPane.getConsole();
 					console.setText(console.getText() + "\n" + df.format(dateobj) + " - ERROR : " + e.getMessage());

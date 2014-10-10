@@ -16,6 +16,7 @@ public class Report {
 		return isQuerying;
 	}
 
+	
 	public Report(RExport owner) {
 		this.owner = owner;
 		isQuerying = false;

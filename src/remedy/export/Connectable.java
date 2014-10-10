@@ -9,6 +9,7 @@ public interface Connectable {
 	public void setIsConnected(Boolean isConnected);
 
 	public Connection getConn();
+	
 
 	public void setConn(Connection conn);
 }

@@ -10,6 +10,7 @@ public class RunGui implements Runnable {
 
 	}
 
+	
 	@Override
 	public void run() {
 		// Create and set up the window.

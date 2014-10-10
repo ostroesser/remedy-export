@@ -19,7 +19,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
-import net.miginfocom.swing.MigLayout;
 
 public class MainPanel extends JPanel {
 	/**
@@ -51,9 +50,9 @@ public class MainPanel extends JPanel {
 		JPanel StartPage = new JPanel();
 
 		tabbedPane.addTab("Start Page", null, StartPage, null);
-		StartPage.setLayout(new MigLayout("", "[][][]", "[][]"));
 
-		JLabel lblCheckChildTickets = new JLabel("Check Child tickets");
+		JLabel lblCheckChildTickets = new JLabel(
+				"Check Child tickets");
 		StartPage.add(lblCheckChildTickets, "cell 1 1");
 
 		JButton btnCheckChild = new JButton("Go!");
